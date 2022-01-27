@@ -71,8 +71,8 @@ search.addEventListener("input",function(e){
     let items=document.getElementsByClassName("allNotes");
     Array.from(items).forEach(function(element){
         let para=element.getElementsByTagName("p")[0].innerText.toLowerCase();
-        console.log(para)
-        if(para.includes(text)){
+        let title=element.getElementsByTagName("span")[0].innerText.toLowerCase();
+        if(para.includes(text)|| title.includes(text)){
             element.style.display="block";
         }else{
             element.style.display="none";
